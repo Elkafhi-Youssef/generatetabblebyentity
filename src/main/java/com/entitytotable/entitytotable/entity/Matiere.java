@@ -2,6 +2,8 @@ package com.entitytotable.entitytotable.entity;
 
 import jakarta.persistence.*;
 
+import java.util.Set;
+
 @Entity
 @Table
 public class Matiere {
@@ -12,5 +14,8 @@ public class Matiere {
     @Basic
     @Column(name = "designation")
     private String designation;
+
+    @OneToMany(mappedBy = "matiere")
+    Set<Enseigner> enseignerSet;
 
 }

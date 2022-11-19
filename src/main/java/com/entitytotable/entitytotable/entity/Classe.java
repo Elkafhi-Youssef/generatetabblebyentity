@@ -2,6 +2,8 @@ package com.entitytotable.entitytotable.entity;
 
 import jakarta.persistence.*;
 
+import java.util.Set;
+
 @Entity
 @Table
 public class Classe {
@@ -18,4 +20,7 @@ public class Classe {
     @Basic
     @Column(name = "department")
     private String department;
+
+    @OneToMany(mappedBy = "classe")
+    Set<Enseigner> enseignerSet;
 }

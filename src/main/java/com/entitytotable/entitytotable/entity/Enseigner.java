@@ -10,13 +10,16 @@ public class Enseigner {
     @ManyToOne
     @MapsId("profid")
     @JoinColumn(name = "profid")
-    Prof prof;
+    private Prof prof;
     @ManyToOne
     @MapsId("matiereid")
     @JoinColumn(name = "matiereid")
-    Matiere matiere;
+    private Matiere matiere;
     @ManyToOne
     @MapsId("classeid")
     @JoinColumn(name = "classeid")
-    Classe classe;
+    private Classe classe;
+    @Basic
+    @Column(name = "nbrheure")
+    private String nbrheure;
 }
